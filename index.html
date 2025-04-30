@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: right;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/8 etc) */
+.numbertext {
+  color: Black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+/* Hover over image text */
+.image-container { 
+    position: relative; 
+    display: inline-block; 
+} 
+ 
+.image-container img { 
+    width: 300px; /* Adjust as needed */ 
+    height: auto; /* Maintain aspect ratio */ 
+} 
+ 
+.hover-text { 
+    position: absolute; 
+    top: 50px;
+	bottom: 50px; /* Position from the bottom */ 
+    left: 150px; /* Position from the left */ 
+    right: -1000px;
+	color: white; /* Text color */ 
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */ 
+    padding: 10px; 
+    border-radius: 5px; 
+    opacity: 0; /* Initially hidden */ 
+    transition: opacity 0.3s; /* Smooth transition */ 
+} 
+ 
+.image-container:hover .hover-text { 
+    opacity: 1; /* Show text on hover */ 
+} 
+
+p {margin-left:100px}
+h1 {margin-left:50px}
+h2 {margin-left:50px}
+h3 {margin-left:50px}
+object {margin-left:50px}
+
+</style>
+
+<title>Rooftop Solar Performance & Billing Analysis</title>
+</head>
+<body>
+
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="admin/my_files/About_RPi.html"><i class="fa fa-fw fa-info-circle"></i> About</a> 
+  <a href="admin/my_files/Download_RPi.html"><i class="fa fa-fw fa-download"></i> Downloads</a> 
+  <a href="admin/my_files/Contacts.html"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+  <a href="admin/my_files/Register.html"><i class="fa fa-fw fa-user"></i> Register/Login</a>
+  <a href="admin/my_files/Demo.html"><i class="fa fa-fw fa-file-video-o"></i> Demo video</a>
+</div>
+
+<div class="image-container"> 
+        <img style = "margin: 0 0 1px 200px; float:right;" src="admin/img/hou yi archer.jpg" alt="Description of Hou Yi Legend"> 
+        <div class="hover-text">In a time when the earth was still very young and the mythical Emperor Yao (帝堯) ruled China, there were ten suns that took turns illuminating the planet. The Jade Emperor (玉皇) told them that only one of them could play in the sky at a time, lest they destroy the earth. Being young children, however, they decided that going out together would be much more fun than going out alone.
+
+When all ten suns appeared in the sky, the temperature on earth became unbearably hot. Mass chaos ensued. Crops shriveled up and people fainted in the streets as the earth began to burn. Seeing an opportunity, wild monsters emerged from the shadows and began to prey on humanity.
+
+A skilled archer named Hou Yi saw the destruction the suns were causing and immediately went to the Jade Emperor. He told the Emperor that if the suns would not behave themselves, he would have to shoot them down in order to save the planet.
+
+Fearing for the lives of his grandchildren, the Jade Emperor scolded them and begged them to return home. The suns were having so much fun, however, that they could not hear the Emperor over the sound of their own laughter. Though the Jade Emperor loved his grandchildren, he could see that there was no reasoning with them. At long last, he gave Hou Yi permission to do what must be done.
+
+Armed with a massive bow made of tiger bones and arrows made of dragon tendons, Hou Yi set about slaying the monsters terrorizing the countryside. When he was finished, he climbed to the top of a tall mountain to confront the suns directly.
+
+Before he began to shoot, Hou Yi gave the children a final warning and pleaded for them to return to the Emperor’s palace. Upon hearing this warning, the suns simply stuck their tongues out at Hou Yi and told him to mind his own business. Steeling himself, Hou Yi drew back his bow and loosed nine arrows upon the suns. Almost instantly, nine of them fell from the sky. The tenth sun was so scared that he ran away and hid in a cave.</div> 
+</div>
+
+<h1>Rooftop Solar Performance & Billing Analysis</h1>
+<p style="font-size:130%;">The charts below are the outputs from a Python script which takes as input a file containing smart meter readings, tariff plans and inverter outputs.</p>
+
+<p style="font-size:130%;">The input is an xlsx format Excel worksheet with 3 sheets. When the Python script is run, the user is prompted for the file location and the start and end dates.</p>
+
+<p style="font-size:130%;">Other Python scripts are available to assist in creating/maintaining this input file by reading smart meter files and inverter outputs.</p>
+
+<p style="font-size:130%;">If you are interested in generating these outputs for your system, email me at link below for more information.</p>
+
+<p style="font-size:130%;"><a href="mailto:paddy.butler@optusnet.com.au?subject=Rooftop Query" target="_blank">Send Mail</a></p>
+
+<p style="font-size:130%;">You can download a sample xlsx file containing the above 3 sheets. The data in this file is from a live domestic solar installation with private data redacted.</p>
+
+<p style="font-size:130%;"><a href="admin/my_files/Solar Analysis Inputs.xlsx" download>
+  Download Sample File
+</a>
+
+<p style="font-size:130%;">You can run a web-based version of the app by clicking the button below. Use the sample file above, or your own file in the same format as the sample file as input by clicking on Browse Files and selecting the file</p>
+<p style="font-size:130%;">The app runs as soon as you upload the file and uses the default start and finish dates which are one month before the last entry in the file and the date of the last entry respectively</p>
+<p style="font-size:130%;">You can enter your own start and finish dates while the app is running by simply placing the cursor in the appropriate date box and selecting from the drop down calendar.</p>
+<p style="font-size:130%;"> Also note that, unlike the executable chart outputs, the web-based ones are not zoomable. Therefore, if the date range is too high, some of the charts will be ugly &#128542;
+
+</p>
+
+<p style="font-size:130%;"><a href="https://solar-app-cnh2r6rccdetf8ffdpwa8r.streamlit.app" target="_blank">
+Run Web App
+</a>
+
+<hr>
+
+<h1>The outputs of the python script are the following graphs and KPIs:</h1>
+
+<h2>Click on the dots below the image to scroll through the charts created.</h2> 
+<h3>Note that as an output from the python script, these charts will be zoomable</h3>
+
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 8</div>
+    <img src="admin/img/Bill Comparison.png" style="width:100%">
+    <div class="desc">This graph shows the breakdown of the bill into component parts such as import energy cost, daily connection fee etc.It also shows what the bill would be if there was no solar, assuming the same tariffs applied (Without_Solar)</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 8</div>
+    <img src="admin/img/Pie Charts.png" style="width:100%">
+    <div class="desc">This graph shows the breakdown of the generated (how much goes to power the home vs how much is exported) kWhs, and the breakdown of the load (how much comes from imported vs solar generated) kWhs</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 8</div>
+    <img src="admin/img/Monthly Generated kWhs.png" style="width:100%">
+    <div class="desc">This graph shows the total monthly kWhs generated by the rooftop solar system from the start of installation (i.e. it disregards the time period entered). Note that data for the first and last months may be for partial months</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 8</div>
+    <img src="admin/img/Total Imported and Exported kWhs.png" style="width:100%">
+    <div class="desc">This graph shows the total daily kWhs exported/imported to/from the grid for the selected time period</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 8</div>
+    <img src="admin/img/Daily Imported kWhs.png" style="width:100%">
+    <div class="desc">This graph shows the total daily load in kWhs and the daily imported kWhs from the grid for the selected time period</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">6 / 8</div>
+    <img src="admin/img/Total Generated and Exported kWhs.png" style="width:100%">
+    <div class="desc">This graph shows the total daily exports in kWhs and the daily solar generated kWhs for the selected time period</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">7 / 8</div>
+    <img src="admin/img/Daily Profiles.png" style="width:100%">
+    <div class="desc">This graph shows the average daily profile for all four energy components for the selected time period</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">8 / 8</div>
+    <img src="admin/img/Battery SoC.png" style="width:100%">
+    <div class="desc">This graph shows the expected charge/discharge curve for a hypothetical 10kWh battery</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+  <span class="dot" onclick="currentSlide(7)"></span> 
+  <span class="dot" onclick="currentSlide(8)"></span>   
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<br><br>
+<hr>
+
+<h2>Billing Summary and selected KPIs</h2>
+
+<object data="admin/img/SolarResults.txt" width="850" height ="500">
+</object>
+
+<!--
+<br><br>
+<hr>
+
+<h2>Download exe file for Windows</h2>
+
+<p style="font-size:130%;">When you run the below executable, the app will first ask for the input file. You can use your own file if it is in the same format as the above sample file, or use the sample file itself. 
+It then asks for a start date followed by an end date. Choose whatever dates you like within the range allowed.</p>
+<form method="get" action="admin/my_files/RooftopSolarAnalysis.exe">
+    <button type="submit" style = "font-size:20px">Download exe</button>
+</form>
+
+<br><br>
+<hr>
+-->
+
+</body>
+</html>
+
+
