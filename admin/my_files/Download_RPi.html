@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Download Page</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: right;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+p {margin-left:100px}
+h1 {margin-left:50px}
+button {margin-left:50px}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-download"></i> Downloads</a> 
+  <a href="/index.php"><i class="fa fa-fw fa-home"></i> Back to Home</a> 
+  <a href="/admin/my_files/About_RPi.html"><i class="fa fa-fw fa-info-circle"></i> About</a> 
+  <a href="/admin/my_files/Contacts.html"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+  <a href="/admin/my_files/Register.html"><i class="fa fa-fw fa-user"></i> Register/Login</a>
+  <a href="/admin/my_files/Demo.html"><i class="fa fa-fw fa-file-video-o"></i> Demo video</a>
+</div>
+
+<h1>Executable</h1>
+<p style="font-size:130%;">When you run the below executable, the app will first ask for the input file. <br>You can use your own file if it is in the same format as the sample file below, or use the sample file itself. 
+<br>It then asks for a start date followed by an end date. Choose whatever dates you like within the range allowed.
+<br><br>The file is 86.2MB
+</p>
+<form method="get" action="/admin/my_files/RooftopSolarAnalysis.exe">
+    <button type="submit" disabled style = "font-size:20px">Download exe for Windows</button>
+</form>
+
+<h1>Input File</h1>
+<p style="font-size:130%;"><a href="/admin/my_files/Solar Analysis Inputs.xlsx" download>
+  Download Sample File
+</a>
+</p>
+
+
+</body>
+</html>
