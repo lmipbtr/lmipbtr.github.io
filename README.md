@@ -1,2 +1,2 @@
 # lmipbtr.github.io
-My Hosted Websit
+My Hosted Website
