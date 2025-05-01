@@ -1,0 +1,42 @@
+Bill for period from  08-Nov-24 to  07-Dec-24  ( 30  days) 	 MPRN: 	 ##########
+
+
+Total Connection Fee for period:  	 $35.46 	 ( $1.18  /day)
+Total Exported Energy in period:  	 787.64 kWh	 ( 26.25  kWh/day)
+Total Exported Credit in period:  	 $25.99 	 ( $0.87  /day) 	 ( $0.033  /kWh)
+Total Imported Energy in period:  	 81.93 kWh	 ( 2.73  kWh/day)
+Total Imported Cost in period:  	 $24.51 	 ( $0.82  /day) 	 ( $0.299  /kWh)
+Total Bill (excl tax and discount):  	 $33.98 	 ( $1.13  /day)
+Total Bill (incl tax and discount):  	 $27.44
+Total Bill (w/o solar or disc):  	 $108.38 	 ( $3.61  /day)
+Net savings:                     	 68.64%
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+KPIs for period from  08-Nov-24 to  07-Dec-24  ( 30  days) 	 MPRN: 	 ##########
+
+
+Total Exports       :  787.64 kWhs
+Maximum Daily Export:  41.18 kWh on  04-Dec-2024
+Minimum Daily Export:  7.13 kWh on  30-Nov-2024
+Average Daily Export:  26.25 kWh
+
+
+Total Imports       :  81.93 kWhs
+Maximum Daily Import:  7.90 kWh on  05-Dec-2024
+Minimum Daily Import:  1.53 kWh on  23-Nov-2024
+Average Daily Import:  2.73 kWh
+
+
+Total Generation        :  949.42 kWhs
+Maximum Daily Generation:  45.66 kWh on  04-Dec-2024
+Minimum Daily Generation:  11.38 kWh on  30-Nov-2024
+Average Daily Generation:  31.65 kWh
+
+
+Total Load        :  243.71 kWhs
+Maximum Daily Load:  19.66 kWh on  05-Dec-2024
+Minimum Daily Load:  4.15 kWh on  23-Nov-2024
+Average Daily Load:  8.12 kWh
