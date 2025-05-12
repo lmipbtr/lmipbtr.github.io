@@ -132,20 +132,22 @@ img {vertical-align: middle;}
 /* Hover over image text */
 .image-container { 
     position: relative; 
-    display: inline-block; 
+    display: flex;
+    justify-content: center; 
 } 
  
 .image-container img { 
     width: 300px; /* Adjust as needed */ 
-    height: auto; /* Maintain aspect ratio */ 
+    height: auto; /* Maintain aspect ratio */
+	border: 3px solid green;
 } 
  
 .hover-text { 
     position: absolute; 
     top: 50px;
 	bottom: 50px; /* Position from the bottom */ 
-    left: 150px; /* Position from the left */ 
-    right: -1000px;
+    left: 300px; /* Position from the left */ 
+    right: 300px;
 	color: white; /* Text color */ 
     background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */ 
     padding: 10px; 
