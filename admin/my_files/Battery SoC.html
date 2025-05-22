@@ -4,6 +4,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -136,13 +153,23 @@ video {margin-left:50px}
   Run Battery SoC Web App
 </a>
 
+<div class="row">
+  <div class="column">
+    <img src="/admin/img/Battery SoC.png" style="width:30%">
+  </div>
+  <div class="column">
+    <img src="/admin/img/Battery SoC Data.png" style="width:30%">
+  </div>
+</div>
+
+<!--    
 <h2>Sample SoC Graph output</h2>
 <img src="/admin/img/Battery SoC.png" style="width:30%" style="display:inline-block;">
 
 <h2>Sample SoC Data output</h2>
 <img src="/admin/img/Battery SoC Data.png" style="width:30%" style="display:inline-block;">
 
-  <!--  <div class="about-section">
+  <div class="about-section">
   <h1>PAGE UNDER CONSTRUCTION</h1>
 </div>
   
