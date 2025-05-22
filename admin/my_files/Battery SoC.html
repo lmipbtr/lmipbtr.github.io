@@ -122,6 +122,10 @@ video {margin-left:50px}
 </div>
 
 <p style="font-size:130%;">You can run a web-based Battery SoC app by clicking the button below. Use the same file as for the main app as input by clicking on Browse Files</p>
+<p style="font-size:130%;">The app replaces imports with an adjusted amount of energy discharged from the battery and replaces exports with an adjusted amount of energy charged to the battery, with the constraints of the battery capacity and DoD</p>
+<p style="font-size:130%;">The adjustments take account of battery and inverter losses</p>
+<p style="font-size:130%;">The outputs of the app are data showing the total imports and exports with/without battery as well as the cost/credit of imports and exports with and without a battery. It also outputs the $ and % savings</p>
+<p style="font-size:130%;">The app also generates a graph showing the battery SoC for each smart meter interval, currently set at half-hourly</p>
 <p style="font-size:130%;">The app runs as soon as the file is uploaded and uses the default values shown. The default start and finish dates are one month before the last entry in the file and the date of the last entry respectively</p>
 <p style="font-size:130%;">You can enter your own parameters and start and finish dates while the app is running by simply placing the cursor in the appropriate date box and eitehr entering new data or by selecting from the drop down calendar.</p>
 <p style="font-size:130%;">If you encounter a date error, check that the dates are valid (e.g. is the end date later than the start date?). If they are invalid, the app will accept new, valid dates while still running.</p>
