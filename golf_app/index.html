@@ -1,1 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 100;
+}
+
+body {
+  font-family: Arial;
+  font-size: 17px;
+}
+
+.container {
+  position: relative;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.container img {vertical-align: middle;}
+
+.container .content {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.25); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+.btn {
+  background-color: #2196F3;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.dropdown {
+  position: absolute;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.btn:hover, .dropdown:hover .btn {
+  background-color: #0b7dda;
+}
+a.myLink:link {
+      color: blue;
+      text-decoration: underline; /* Remove underline */
+    }
+    a.myLink:visited {
+      color: red;
+    }
+    a.myLink:hover {
+      color: green;
+      text-decoration: underline;
+    }
+    a.myLink:active {
+      color: yellow;
+    }
+</style>
+</head>
+  <title>WHS Handicap</title>
+
+<body>
+
+<div class="container">
+  <img src="C:\MyFolder\Paddy_2\Home Security\VPN Project\Raspberry Pi\NGINX\golf.jpeg" alt="Notebook" style="width:100%;">
+  <div class="content">
+    <p>This site enable users to calculate their World Handicap System (WHS) handicap based on an initial WHS handicap and latest round Stableford results.</p>
+	<p>It is intended to be used by golfers who would like to keep track of their "real" handicap but who play lots of non-handicap counting (e.g. social) golf .</p>
+	<p>The site can be used in one of two ways:</p>
+	<h4>Method 1:</h4>
+	<p>	First time users will need to upload 2 spreadsheets, a score spreadsheet and a course spreadsheet. The score spreadsheet must have at least 3 official handicap scores which act as a starting point.
+	Registered users who have already uploaded these file need to simply log in and enter their latest round's score. A new virtual handicap will be calculated and stored for next use.
+	Sample files are available for download. The uploaded files must be in the same format as these sample files.</p>
+	<p>Move the mouse over the arrow icon to open the dropdown menu. <b><i>Note that these registration and log-in pages are still under construction so currently, the only option is Method 2 </b></i>&#128530</p>
+	<button class="btn">Sign-in/Log-in</button>
+	<div class="dropdown">
+    <button class="btn" style="border-left:1px solid #0d8bf2">
+    <i class="fa fa-caret-down"></i>
+	</button>
+	<div class="dropdown-content">
+		<a href="C:\MyFolder\Paddy_2\Home Security\VPN Project\Raspberry Pi\NGINX\Register.html">New Users</a>
+		<a href="C:\MyFolder\Paddy_2\Home Security\VPN Project\Raspberry Pi\NGINX\Login.html">Existing Users</a>
+	</div>
+	</div>
+	
+	<h4>Method 2:</h4>
+	<p>This method enables users to run a web-based script. This script prompts the user to upload two spreadsheets, one containing their scores (comp and non-comp) and one containing course details of all
+	courses and tees they have included in their score sheet.
+	There are sample spreadsheets available for download below and user's uploaded files must be in this format. Also, since the WHS handicap is calculated after a round and this determines the daily handicap for the next 
+	round, the order of rounds is important.
+	The more rounds that are included in the score file, the more accurate the estimation will be of their virtual handicap.</p>
+	<p>Click on the link below. You will be prompted to upload the two files. There is an error message displayed which can be igored as it disappears when the files are uploaded</p>
+  <p style="font-size:130%;"><a href="https://golf-app-ruwlqgntju8i4yx7vvspgo.streamlit.app/" class="myLink" target="_blank">
+  Run Web App</a>
+  </p>
+  <br>
+  <br>
+  <h1 style="color:black;">Sample Files</h1>
+  <p style="color:black;">Users are prompted to upload two files when the app is executed, a Score file and a Rounds file. The files can have arbitratry names but must have the same sheet names as the samples</p>
+  <p style="color:black;">Click on links below to download sample files</p>
+  
+  <p style="font-size:130%;" style="color:black;"><a href="C:\MyFolder\Paddy_2\Web Development\Golf Comp Scores History_PA1.xlsx" class="myLink" download>
+  Download Sample Score File
+</a>
+<p style="color:black;">This file contains two sheets, one named <b><i>Score</b></i> and the second named <b><i>Artificial Rounds</b></i>. The <b><i>Score</b></i> sheet contains the per-hole stroke results for each hole and round</p>
+<p style="color:black;">Additional information is also included here, such as the initial GA handicap (which must be in the correct cell, E2) and the round's <b><i>PCC or Playing Conditions Calculation</b></i>.</p>
+<p style="color:black;">Remember that the GA handicap is calculated from your current round but it only applies from your next round. So the initial GA handicap value should be the one applying at the start of that round (generated by previous round!)</p>
+<p style="color:black;">For Par type rounds, simply enter the final score in the appropriate cell. You may enter the individual hole stroke if you wish but it is not necessary to calculate your points</p>
+<p style="color:black;">The <b><i>Artificial Rounds</b></i> sheet records the relevant data from your initial 3 GA artifically generated rounds used to initialize the calculations. If you have more than 20 rounds, you don'd need to change this</p>
+<p style="color:black;">For calculation purposes, only the last 20 rounds are required since the algorithm works on an "8 of 20 scores" system.</p>
+<p style="color:black;">Strictly speaking, all scores from the last 12 months are required to take the Soft and Hard Caps into account</p>
+<p style="color:black;">Hopefully, it will all make perfect sense when you see the files &#129310</p>
+</p>
+   <p style="font-size:130%;" style="color:black;"><a href="C:\MyFolder\Paddy_2\Web Development\Courses.xlsx" class="myLink" download>
+  Download Sample Course File
+</a>
+<p style="color:black;">This file also contains two sheets, one named <b><i>Ratings</b></i> and the second named <b><i>Par_Index</b></i>. The <b><i>Ratings</b></i> sheet contains the Slope and Scratch 
+Ratings for each course and tees that is inlcuded in the Scores sheet.</p>
+<p style="color:black;">The <b><i>Par_Index</b></i> sheet contains the par and associated index for each hole for all the courses and tees that are contained in the <b><i>Score</b></i> file</p>
+<p style="color:black;">The app will return an error if any of the courses or tees that are included in the <b><i>Score</b></i> files are not included in the <b><i>Courses</b></i> file &#128542</p>
+
+</p>
+</div>
+</body>
+</html>
 
