@@ -44,14 +44,15 @@
               with col2:
                   batt_cap_unit = st.pills('Enter battery capacity units', options = ['Ah','Wh'],selection_mode="single",default = 'Ah')
               with col1:
-                  batt_size = st.number_input(label='Enter battery capacity', value = 100)
+                  batt_size = st.number_input(label='Enter battery capacity', value = 100.0, step = 1.0)
               batt_chem = st.pills(label='Enter battery chemistry', options = ['LiFePO4','AGM', 'SLA'], default = 'LiFePO4')
-              batt_block_size = st.pills(label='Enter Batblock size', options = [25, 50], default = 50)
-              solar_panel_rated_current = st.number_input(label='Enter Solar Panel Rated Current', value = 20)
+              batt_block_size = st.pills(label='Enter Batblock size', options = [25, 40], default = 25)
+              batt_charge_current_max = st.number_input(label='Enter max Batblock charging current A', value = 25.0, step = 0.1)
+              solar_panel_rated_current = st.number_input(label='Enter Solar Panel Rated Current', value = 20.0, step = 0.1)
               with col2:
                   load_unit = st.pills(label='Enter load unit', options = ['A', 'W'], default = 'A')
               with col1:
-                  load = st.number_input(label='Enter load', value = 5)
+                  load = st.number_input(label='Enter load', value = 5.0, step = 0.1)
               submit_button = st.form_submit_button(label='Submit')
               
       title1 = "Outputs for " + str(batt_size) + " " + str(batt_cap_unit) + " "  + str(batt_chem) + " battery"  
@@ -118,13 +119,13 @@
           with col1:
               st.text("Charge Time from empty to full:")
           with col2:
-              st.text(str("{0:,.1f}".format(batt_size / batt_block_size)))
+              st.text(str("{0:,.1f}".format(batt_size / batt_charge_current_max)))
           with col3:
               st.text("hours of driving")
           with col1:
               st.text("Charge Time from " + str("{:,.0f}%".format((1 - recc_batt_dod) * 100)) + " DoD to full:")
           with col2:
-              st.text(str("{0:,.1f}".format(batt_size * (recc_batt_dod/ batt_block_size))))
+              st.text(str("{0:,.1f}".format(batt_size * (recc_batt_dod/ batt_charge_current_max))))
           with col3:
               st.text(" hours of driving")
                   
