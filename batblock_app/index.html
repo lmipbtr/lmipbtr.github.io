@@ -49,6 +49,7 @@
               batt_block_size = st.pills(label='Enter Batblock size', options = [25, 40], default = 25)
               batt_charge_current_max = st.number_input(label='Enter max Batblock charging current A', value = 25.0, step = 0.1)
               solar_panel_rated_current = st.number_input(label='Enter Solar Panel Rated Current', value = 20.0, step = 0.1)
+              current_soc = st.slider("Enter State of Charge of battery", 0.0, 100.0, 50.0, step = 0.1)
               with col2:
                   load_unit = st.pills(label='Enter load unit', options = ['A', 'W'], default = 'A')
               with col1:
@@ -76,30 +77,46 @@
       
       if batt_chem == 'LiFePO4':
           recc_batt_dod = 0.8
-          part_discharge_time = full_disch_time * 0.8
       elif batt_chem == 'AGM':
           recc_batt_dod = 0.5
-          part_discharge_time = full_disch_time * 0.5
       elif batt_chem == 'SLA':
           recc_batt_dod = 0.5
-          part_discharge_time = full_disch_time * 0.5
-          
+      part_discharge_time = full_disch_time * recc_batt_dod
+      part_discharge_time2 = full_disch_time * ((current_soc / 100) - (1 - recc_batt_dod))
+    
       with st.container(border=True):
           st.subheader(title1)
-          st.subheader("Battery  Discharge times", divider = True)
-          col1, col2, col3 = st.columns([2,1,3])
+          
+          st.subheader("Battery Discharge times", divider = True)
+          col1, col2, col3 = st.columns([2,1,4])
           with col1:
               st.text("Full Discharge time:")
           with col2:
               st.text(str("{0:,.1f}".format(full_disch_time)))
           with col3:
-              st.text("hours")
+              st.text("hours from 100% to 0%")
           with col1:
               st.text("Partial Discharge time:")
           with col2:
               st.text(str("{0:,.1f}".format(part_discharge_time)))
           with col3:
-              st.text(" hours (to recommended max " + str("{:,.0f}%".format((recc_batt_dod) * 100)) + " DoD)")
+              st.text(" hours from 100% to recommended min SoC (" + str("{:,.0f}%".format(100 - ((recc_batt_dod) * 100)))+ ")")
+          with col1:
+              st.text("Partial Discharge time:")
+          with col2:
+              st.text(str("{0:,.2f}".format(part_discharge_time2)))
+          with col3:
+              if part_discharge_time2 >= 0:
+                  st.text(" hours from " + str("{:,.1f}%".format(current_soc)) + " to recommended min SoC (" + str("{:,.0f}%".format((100 - (recc_batt_dod) * 100)))+ ")")
+              else:
+                  st.text("Battery SoC already below recommended minimum")
+          with col1:
+              st.text("Partial Discharge time:")
+          with col2:
+              st.text(str("{0:,.2f}".format(full_disch_time * (current_soc / 100))))
+          with col3:
+              st.text(" hours from " + str("{:,.1f}%".format(current_soc)) + " to 0%")
+          
           st.subheader("Battery Charge times from solar panel", divider = True)
           col1, col2, col3 = st.columns([3,1,4])
           with col1:
@@ -109,11 +126,18 @@
           with col3:
               st.text("hours of full sunlight")
           with col1:
-              st.text("Charge Time from " + str("{:,.0f}%".format((1 - recc_batt_dod) * 100)) + " DoD to full:")
+              st.text("Charge Time from " + str("{:,.0f}%".format((1 - recc_batt_dod) * 100)) + " SoC to full:")
           with col2:
               st.text(str("{0:,.1f}".format(full_charge_time_solar * recc_batt_dod)))
           with col3:
               st.text(" hours of full sunlight")
+          with col1:
+              st.text("Charge Time from " + str("{:,.1f}%".format(current_soc)) + " SoC to full:")
+          with col2:
+              st.text(str("{0:,.2f}".format(full_charge_time_solar * ((100 - current_soc ) / 100))))
+          with col3:
+              st.text(" hours of full sunlight")
+          
           st.subheader("Battery Charge times from alternator", divider = True)
           col1, col2, col3 = st.columns([3,1,4])
           with col1:
@@ -123,9 +147,15 @@
           with col3:
               st.text("hours of driving")
           with col1:
-              st.text("Charge Time from " + str("{:,.0f}%".format((1 - recc_batt_dod) * 100)) + " DoD to full:")
+              st.text("Charge Time from " + str("{:,.0f}%".format((1 - recc_batt_dod) * 100)) + " SoC to full:")
           with col2:
               st.text(str("{0:,.1f}".format(batt_size * (recc_batt_dod/ batt_charge_current_max))))
+          with col3:
+              st.text(" hours of driving")
+          with col1:
+              st.text("Charge Time from " + str("{:,.1f}%".format(current_soc)) + " SoC to full:")
+          with col2:
+              st.text(str("{0:,.2f}".format(((batt_size / batt_charge_current_max) * ((100 - current_soc) / 100)))))
           with col3:
               st.text(" hours of driving")
                   
