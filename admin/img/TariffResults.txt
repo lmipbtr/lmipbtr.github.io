@@ -1,0 +1,12 @@
+Tariffs for period from  15-Feb-26 to  14-Mar-26
+
+FIT Band Plan Date  2026-02-15
+Band FIT is  3.30c per kWh, from  00:00:00
+
+Standing Charge Plan Date  2026-02-15
+Standing Charge is  $0.91  per day, excl GST
+
+Tariff Band Plan Date  2026-02-15
+Band Tariff is  16.98c per kWh, excl GST, from  00:00:00
+Band Tariff is  28.00c per kWh, excl GST, from  14:00:00
+Band Tariff is  16.98c per kWh, excl GST, from  20:00:00
